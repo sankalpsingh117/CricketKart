@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+
+<body style="background-color: lightgrey;">
+    <button class="bg-indigo-400 ml-8 p-2 text-white hover:bg-indigo-500" onclick="window.location.href='/index'">Home</button>
+
+    <div class="bg-white w-4/5 m-auto mt-8 p-8 rounded-lg">
+        <p class="text-center my-2 text-2xl font-bold mb-8">CART</p>
+        <table class="m-auto">
+            <tr class="bg-sky-200">
+                <th class="px-2">Product</th>
+                <th class="px-2">Quantity</th>
+                <th class="px-2">Price</th>
+                <th class="px-2">Total</th>
+                <th class="px-2">Action</th>
+            </tr>
+
+       
+            <% result.forEach(function(result) { %>
+            <tr>
+                <td class='px-2'><%= result.name %></td>
+                <td class='px-2'><%= result.quantity %></td>
+                <td class='px-2'><%= result.price %></td>
+                <td class='px-2'><%= result.price*result.quantity %></td>
+                <td class='px-2'>
+                <form action="/removeitm" method='post'>
+               <button class='bg-red-400 p-1 mt-1 hover:bg-red-500 text-white' name='remove' value='<%= result.name %>'>Remove</button>
+               </form></td>
+            </tr>
+            <% }) %>
+        </table>
+        <% if(result=="") { %>
+        <p class='text-center font-bold mt-4'>Cart is Empty</p>
+     
+   
+        <% } else { %>
+        <div class="mt-8 w-80 m-auto">
+          <div class='text-center mt-2 mb-8 font-bold w-fit ml-auto'>Grand Total <%= total %></div> 
+            <div class='w-fit m-auto inline'><button onclick="window.location.href='/summary'" class='p-2 text-white bg-indigo-400 hover:bg-indigo-500'>Checkout</button></div>
+            <div class='w-fit m-auto inline'><button class='bg-indigo-400 p-2 text-white hover:bg-indigo-500' onclick='window.print()'>Print Invoice</button><div>
+          <%  } %>  
+ 
+        </div>
+    </div>
+
+</body>
+
+</html>

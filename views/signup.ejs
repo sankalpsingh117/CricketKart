@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/favi.png">
+    <title>Sign Up</title>
+</head>
+
+
+<body>
+
+    <style>
+        a {
+            margin: 0px 15%;
+        }
+
+        body {
+            background-color: lightgray;
+        }
+
+        .main {
+            background-color: white;
+            width: 27%;
+            margin: auto;
+            margin-top: 30px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            border-radius: 5px;
+
+        }
+
+        #btn {
+            background-color: #818cf8;
+            color: rgb(255, 255, 255);
+            margin: 25px 23%;
+            width: 50%;
+            height: 40px;
+            border-radius: 5px;
+            border-color: #818cf8;
+
+        }
+
+        #btn:hover {
+            background-color: #6366f1;
+            border-color: #6366f1;
+            cursor: pointer;
+
+        }
+
+        .input {
+            width: 65%;
+            height: 35px;
+            margin: 12px 15%;
+        }
+
+        h2 {
+            text-align: center;
+            padding-top: 25px;
+
+        }
+
+        .label {
+            margin: 15px 15%;
+        }
+
+        .signup {
+            margin: 0px 33%;
+            padding-bottom: 25px;
+
+        }
+
+        @media screen and (max-width: 650px) {
+            .main {
+                width: 70%;
+            }
+        }
+    </style>
+    <div class="main">
+        <h2>SIGN UP</h2>
+        <p id="err" style="color:red;text-align:center;">
+ 
+        </p>
+        <form action="/user_signup" method="post">
+
+            <input required id="input1" class="input" type="text" name="name" placeholder="Name"><br>
+            <input required id="input2" class="input" type="text" name="email" placeholder="Email"><br>
+            <input required id="input3" class="input" type="text" name="address" placeholder="City"><br>
+            <input required id="input4" class="input" type="text" name="phone" placeholder="Phone"><br>
+            <input required id="input5" class="input" type="password" name="password" placeholder="Password"><br>
+            <input required id="input6" class="input" type="password" name="confirm" placeholder="Confirm Password"><br>
+
+
+
+
+
+
+            <button id="btn" type="submit">SIGN UP</button>
+        </form>
+        <div class="signup">
+            <p>Had a account ?</p><a href="/">Sign In</a>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

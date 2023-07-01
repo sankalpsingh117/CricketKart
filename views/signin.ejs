@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/favi.png">
+    <title>Sign In</title>
+</head>
+
+
+<body>
+    <script>
+        function empty() {
+            if (document.getElementById('input1').value == "" && document.getElementById('input2').value == "") {
+                document.getElementById("err").innerHTML = "Enter Username and Password";
+                event.preventDefault();
+            }
+
+            if (document.getElementById('input1').value == "" && document.getElementById('input2').value != "") {
+                document.getElementById("err").innerHTML = "Enter Username";
+                event.preventDefault();
+            }
+            if (document.getElementById('input2').value == "" && document.getElementById('input1').value != "") {
+                document.getElementById("err").innerHTML = "Enter Password";
+                event.preventDefault();
+            }
+
+
+        }
+    </script>
+    <style>
+        body {
+            background-color: lightgrey;
+        }
+
+        .main {
+            background-color: white;
+            width: 23%;
+            margin: auto;
+            margin-top: 75px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            border-radius: 5px;
+
+        }
+
+        #btn {
+            background-color: #818cf8;
+            margin: 35px 23%;
+            width: 50%;
+            height: 40px;
+            border-radius: 5px;
+            border-color: #818cf8;
+            color: white;
+        }
+
+        #btn:hover {
+            background-color: #6366f1;
+            border-color: #6366f1;
+            cursor: pointer;
+        }
+
+        .input {
+
+            width: 65%;
+            height: 35px;
+            margin: 15px 15%;
+        }
+
+        h2 {
+            text-align: center;
+            padding-top: 50px;
+
+        }
+
+        .label {
+            margin: 15px 15%;
+        }
+
+        .signup {
+            margin: 10px 33%;
+            padding-bottom: 25px;
+
+        }
+
+        @media screen and (max-width: 600px) {
+            .main {
+                width: 75%;
+            }
+        }
+    </style>
+    <div class="main">
+        <h2>SIGN IN</h2>
+        <p id="err" style="color: red;text-align:center;">
+        </p>
+        <form action="/user" method="post">
+
+            <input id="input1" class="input" type="text" name="em" id="email" placeholder="Email"><br>
+
+            <input id="input2" class="input" type="password" name="ps" id="pass" placeholder="Password"><br>
+            <button  id="btn" type="submit">SIGN IN</button>
+        </form>
+        <div class="signup">
+            <p>Need an accout ?</p><a href="/signup">Sign Up</a>
+        </div>
+    </div>
+</body>
+
+</html>
